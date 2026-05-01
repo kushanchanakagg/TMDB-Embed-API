@@ -13,6 +13,7 @@ RUN npm install --omit=dev
 COPY apiServer.js ./
 COPY providers ./providers
 COPY public ./public
+COPY proxy ./proxy
 COPY utils ./utils
 COPY README.md ./
 
@@ -34,6 +35,7 @@ COPY --from=build /app/apiServer.js ./
 COPY --from=build /app/public ./public
 COPY --from=build /app/providers ./providers
 COPY --from=build /app/utils ./utils
+COPY --from=build /app/proxy ./proxy  
 COPY --from=build /app/package.json ./
 COPY --from=build /app/README.md ./
 
